@@ -4,13 +4,7 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   label: number | string;
 };
 export const Key = ({ label, ...props }: Props) => {
-  return (
-    <button {...props}>
-      {label}
-    </button>
-  );
+  const formattedLabel = typeof label === 'number' ? label.toString() : label;
+
+  return <button {...props}>{formattedLabel}</button>;
 };
-
-
-
-
